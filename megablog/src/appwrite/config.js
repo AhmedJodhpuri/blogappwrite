@@ -118,15 +118,12 @@ export class Service{
         }
     }
 
-    getFilePreview(fileId) {
-        if (!fileId) {
-          throw new Error('Missing required parameter: "fileId"');
-        }
+    getFilePreview(fileId){
         return this.bucket.getFilePreview(
-          conf.appwriteBucketId,
-          fileId
-        );
-      }
+            conf.appwriteBucketId,
+            fileId
+        )
+    }
 }
 
 const service = new Service()
